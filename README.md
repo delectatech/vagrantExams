@@ -26,7 +26,7 @@ $ mkdir -p CodeProjects/code
 
 ```
 $ cd CodeProjects
-$ git clone git@bitbucket.org:########.git server
+$ git clone https://github.com/delectatech/vagrantExams.git
 ```
 
 **[3]** Inside, run vagrant

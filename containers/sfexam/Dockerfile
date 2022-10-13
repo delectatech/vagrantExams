@@ -27,12 +27,12 @@ RUN sed -ie 's/\;date\.timezone\ =/date\.timezone\ =\ Europe\/Madrid/g' /etc/php
 RUN sed -ie 's/\allow_url_fopen\ =/allow_url_fopen\ =\ 1/g' /etc/php/7.3/cli/php.ini
 RUN sed -ie 's/\default_socket_timeout\ =/default_socket_timeout\ =\ 172800/g' /etc/php/7.3/cli/php.ini
 
-RUN echo 'xdebug.remote_autostart = 1' >> /etc/php/7.3/mods-available/xdebug.ini
-RUN echo 'xdebug.remote_connect_back=1' >> /etc/php/7.3/mods-available/xdebug.ini
-RUN echo 'xdebug.remote_enable = 1' >> /etc/php/7.3/mods-available/xdebug.ini
-RUN echo 'xdebug.remote_host = host.docker.internal' >> /etc/php/7.3/mods-available/xdebug.ini
-RUN echo 'xdebug.remote_log = /tmp/xdebug_remote.log' >> /etc/php/7.3/mods-available/xdebug.ini
-RUN echo 'xdebug.remote_port = 9006' >> /etc/php/7.3/mods-available/xdebug.ini
+RUN echo 'xdebug.start_with_request=yes' >> /etc/php/7.3/mods-available/xdebug.ini
+RUN echo 'xdebug.discover_client_host=1' >> /etc/php/7.3/mods-available/xdebug.ini
+RUN echo 'xdebug.mode=develop,debug,coverage' >> /etc/php/7.3/mods-available/xdebug.ini
+RUN echo 'xdebug.client_host = host.docker.internal' >> /etc/php/7.3/mods-available/xdebug.ini
+RUN echo 'xdebug.log = /tmp/xdebug_remote.log' >> /etc/php/7.3/mods-available/xdebug.ini
+RUN echo 'xdebug.client_port = 9006' >> /etc/php/7.3/mods-available/xdebug.ini
 
 RUN sed -ie '1iServerName\ localhost\ ' /etc/apache2/apache2.conf
 

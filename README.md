@@ -51,7 +51,11 @@ $ sudo su - \\ (password: vagrant)
 ```
 
 **[5]** Now, if you have finished the installation, with all the code installed, then you can create the containers:
-
+```
+dm-docker-up sfexam
+dm-docker-up mariadb
+dm-docker-up proxy
+```
 
 Hosts (your hosts table must be like this)
 -------------------

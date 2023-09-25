@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM ubuntu:22.04
 ARG DEBIAN_FRONTEND=noninteractive
 # Install Apache
 RUN apt-get update && apt-get -y upgrade && apt-get -y install software-properties-common make curl gnupg python python3 build-essential
